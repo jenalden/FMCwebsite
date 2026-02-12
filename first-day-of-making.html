@@ -32,6 +32,15 @@
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
         }
 
         nav ul {
@@ -100,6 +109,15 @@
         }
 
         @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-logo {
+                height: 30px;
+            }
+
             nav ul {
                 gap: 1rem;
                 font-size: 0.9rem;
@@ -125,6 +143,7 @@
 </head>
 <body>
     <nav>
+        <a href="index.html"><img src="file:///C:/Users/jenal/Google%20Drive/Church%20of%20the%20First%20Mark/Logos%20and%20Collateral/LogoTextOfficial.jpg" alt="CFM Logo" class="nav-logo"></a>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -135,8 +154,30 @@
 
     <div class="container">
         <div class="content-box">
-            <h2>First Day of Making</h2>
-            <p>[Information about the First Day of Making event will go here]</p>
+            <h2>A Day of Making</h2>
+            <h3>March 7, 2026</h3>
+
+            <p>Brought to you by the Church of the First Mark, the Day of Making is a miniature festival, a celebration of making in all of its forms.</p>
+
+            <p>Bring your friends, bring your projects, bring your ideas, and let's put new things into the world together.</p>
+
+            <h3>Schedule:</h3>
+
+            <p><strong>Noon</strong> - doors open</p>
+
+            <p><strong>1pm</strong> - service begins. We'll talk about creativity, what we hope to accomplish with our church, brainstorm some of our upcoming events, and answer your curious questions.</p>
+
+            <p><strong>1:30</strong> - Let the Making begin! The entire house is full of tools and materials, get inspired and make something new. Maybe bring an existing project you've been meaning to get to and work on that. Ask nosy questions about what other people are working on - people love to explain their projects!</p>
+
+            <p><strong>8pm</strong> - closing. We'll do a brief show and tell, share our thoughts about the experience, and close the service.</p>
+
+            <hr style="margin: 2rem 0; border: none; border-top: 1px solid #2a2a2a;">
+
+            <p>Creation is hungry work! You're encouraged but not required to bring a drink or a snack to share. (Drinking can be helpful for getting the creative juices flowing, but guests who have had alcohol will not be allowed to use the power tools.)</p>
+
+            <p>The Day of Making will in many ways carry on the tradition of <a href="https://kestel-con.org" target="_blank">Kestel-con</a>. You can read more about it and see photos from past events here.</p>
+
+            <p>This event will be held at a private residence in San Francisco, please RSVP to the partiful invitation for the address.</p>
         </div>
     </div>
 </body>
