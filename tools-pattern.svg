@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <style>
+      .tool {
+        fill: none;
+        stroke: #888;
+        stroke-width: 2;
+        opacity: 0.08;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+
+  <!-- Scissors -->
+  <g class="tool">
+    <path d="M30,40 L50,60 M50,40 L30,60"/>
+    <circle cx="25" cy="35" r="8"/>
+    <circle cx="55" cy="35" r="8"/>
+  </g>
+
+  <!-- Hammer -->
+  <g class="tool">
+    <path d="M120,30 L130,50 L125,55 L115,45 Z"/>
+    <line x1="125" y1="55" x2="130" y2="70"/>
+  </g>
+
+  <!-- Paintbrush -->
+  <g class="tool">
+    <rect x="200" y="35" width="40" height="8" rx="2"/>
+    <line x1="220" y1="43" x2="220" y2="60"/>
+  </g>
+
+  <!-- Thread spool -->
+  <g class="tool">
+    <path d="M310,40 Q320,30 330,40 L330,55 Q320,65 310,55 Z"/>
+  </g>
+
+  <!-- Chisel -->
+  <g class="tool">
+    <path d="M50,140 L50,180 M45,145 L55,145 M42,175 L58,175"/>
+  </g>
+
+  <!-- Magnifying glass -->
+  <g class="tool">
+    <circle cx="140" cy="160" r="12"/>
+    <line x1="152" y1="160" x2="175" y2="160"/>
+  </g>
+
+  <!-- Typewriter keys -->
+  <g class="tool">
+    <rect x="230" y="150" width="15" height="15" rx="2"/>
+    <rect x="248" y="150" width="15" height="15" rx="2"/>
+    <rect x="239" y="168" width="15" height="15" rx="2"/>
+  </g>
+
+  <!-- Pliers -->
+  <g class="tool">
+    <path d="M320,145 L335,160 M335,145 L320,160"/>
+    <path d="M327.5,152.5 L340,165 L335,170 L322.5,157.5"/>
+  </g>
+
+  <!-- Pencil -->
+  <g class="tool">
+    <circle cx="45" cy="260" r="8"/>
+    <line x1="45" y1="268" x2="45" y2="290"/>
+    <path d="M40,285 L45,295 L50,285"/>
+  </g>
+
+  <!-- Paintbrush with ferrule -->
+  <g class="tool">
+    <path d="M130,250 Q135,245 140,250 L138,270 Q135,273 132,270 Z"/>
+    <line x1="135" y1="250" x2="135" y2="235"/>
+  </g>
+
+  <!-- Soldering iron -->
+  <g class="tool">
+    <rect x="210" y="255" width="35" height="8" rx="2"/>
+    <rect x="220" y="248" width="4" height="10"/>
+    <path d="M245,259 L255,259"/>
+  </g>
+
+  <!-- Needle and thread -->
+  <g class="tool">
+    <line x1="310" y1="250" x2="330" y2="250"/>
+    <line x1="320" y1="245" x2="320" y2="280"/>
+    <circle cx="320" cy="283" r="2"/>
+  </g>
+
+  <!-- Screwdriver -->
+  <g class="tool">
+    <path d="M35,350 Q40,340 45,350 L43,365 Q40,368 37,365 Z"/>
+    <line x1="40" y1="350" x2="40" y2="335"/>
+    <rect x="38" y="330" width="4" height="5"/>
+  </g>
+
+  <!-- Nails -->
+  <g class="tool">
+    <circle cx="135" cy="355" r="4"/>
+    <line x1="135" y1="359" x2="135" y2="380"/>
+  </g>
+
+  <!-- Tweezers -->
+  <g class="tool">
+    <path d="M210,350 L220,350 L218,365 M212,350 L214,365"/>
+  </g>
+
+  <!-- Yarn ball -->
+  <g class="tool">
+    <ellipse cx="325" cy="355" rx="15" ry="12"/>
+    <path d="M310,355 Q325,345 340,355"/>
+    <path d="M315,350 Q325,360 335,350"/>
+  </g>
+
+  <!-- Knitting needles -->
+  <g class="tool">
+    <line x1="50" y1="30" x2="70" y2="50"/>
+    <line x1="52" y1="30" x2="72" y2="50"/>
+    <circle cx="49" cy="29" r="2"/>
+    <circle cx="71" cy="51" r="2"/>
+  </g>
+
+  <!-- Paint palette -->
+  <g class="tool">
+    <ellipse cx="370" cy="250" rx="20" ry="15"/>
+    <circle cx="365" cy="245" r="3"/>
+    <circle cx="375" cy="248" r="3"/>
+    <circle cx="368" cy="255" r="3"/>
+  </g>
+</svg>
