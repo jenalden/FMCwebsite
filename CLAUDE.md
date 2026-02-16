@@ -38,8 +38,9 @@ This is the website for the Church of the First Mark, a church centered around h
    - Full content from About.md
    - Explains the church's philosophy, stewards, and domains
    - Background: about.jpg
-   - Contains three key links:
+   - Contains key links:
      - Link to First Day of Making page
+     - Link to Discord server (https://discord.gg/zc5eH9c8)
      - Link to Events page
      - Link to Donate page
 
