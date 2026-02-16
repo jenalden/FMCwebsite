@@ -1,7 +1,7 @@
 # Church of the First Mark Website
 
 ## Project Overview
-This is the website for the Church of the First Mark, a church centered around human creativity as a spiritual practice. The tagline is "making stuff is sacred actually".
+This is the website for the Church of the First Mark, a church centered around human creativity as a spiritual practice. The tagline is "making stuff is sacred".
 
 ## File Locations
 
@@ -16,21 +16,28 @@ This is the website for the Church of the First Mark, a church centered around h
 
 ### Key Assets
 - **Font**: Lindum (Regular) - `C:\Users\jenal\Google Drive\Church of the First Mark\Logos and Collateral\Lindum Font\Lindum-Regular.ttf`
-- **Background**: wood.jpg - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\images\wood.jpg`
+- **Logo**: logo.png (favicon) - `C:\Users\jenal\Google Drive\Church of the First Mark\Logos and Collateral\logo.png`
+- **Background Images**:
+  - home.jpg (homepage background) - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\images\Background\Home.jpg`
+  - about.jpg (about page background) - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\images\Background\About.jpg`
+  - toolbackground.png, tools-pattern.svg (other pages)
+  - CFMWebBackground2.jpg, CFMWebBackground.jpg (previous backgrounds)
 - **Content**: About.md - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\About.md`
-- Other images available: wall.jpg, carpet.jpg
 
 ## Site Structure
 
 ### Pages
 1. **index.html** - Home/Landing page
    - Features church name in Lindum font
-   - Tagline: "making stuff is sacred actually"
+   - Tagline: "making stuff is sacred"
    - Simple, centered design
+   - Background: home.jpg
+   - Favicon: logo.png
 
 2. **about.html** - About page
    - Full content from About.md
    - Explains the church's philosophy, stewards, and domains
+   - Background: about.jpg
    - Contains three key links:
      - Link to First Day of Making page
      - Link to Events page
@@ -41,7 +48,8 @@ This is the website for the Church of the First Mark, a church centered around h
    - Links to First Day of Making page
 
 4. **donate.html** - Donations page
-   - Placeholder for donation information
+   - GiveButter donation widget integrated (widget ID: gRx8Dj)
+   - Script loaded from: https://widgets.givebutter.com/latest.umd.cjs?acct=7VH4ao0zgm6LIz2i&p=other
 
 5. **first-day-of-making.html** - First Day of Making event page
    - NOT in main navigation (only linked from About and Events)
@@ -60,12 +68,12 @@ Note: First Day of Making page is intentionally NOT in the main menu.
 ## Design Specifications
 
 ### Colors
-- **Background**: Wood texture image (warm brown tones)
+- **Background**: home.jpg on homepage, about.jpg on about page, tool patterns on other pages
 - **Text**: Charcoal grey (#2a2a2a) - high contrast but not pure black
 - **Secondary text**: #4a4a4a
-- **Navigation bar**: Semi-transparent brown (rgba(139, 90, 60, 0.95)) - beige text (#f5f5dc)
-- **Content boxes**: Semi-transparent beige (rgba(245, 245, 220, 0.9-0.95))
-- **Links**: Brown (#8b5a3c) with darker hover state (#6b4a2c)
+- **Navigation bar**: Semi-transparent golden (#E3BC68 / rgba(227, 188, 104, 0.95)) - beige text (#f5f5dc)
+- **Content boxes**: Semi-transparent white/beige (rgba(255, 255, 255, 0.9) or rgba(245, 245, 220, 0.9-0.95))
+- **Links**: Dark grey (#5a5a5a) with darker hover state (#2a2a2a)
 
 ### Typography
 - **Title font**: Lindum (custom font, loaded via @font-face)
@@ -105,17 +113,25 @@ Note: First Day of Making page is intentionally NOT in the main menu.
 ## Technical Notes
 
 ### Font Loading
-Using file:/// protocol to load local font file from Google Drive location. This works for local development but will need to be updated for production deployment.
+Lindum-Regular.ttf is loaded locally in the website directory via @font-face. Font file copied from Google Drive.
 
-### Background Image
-Using file:/// protocol to load wood.jpg. Same consideration as fonts - will need proper path for production.
+### Images
+All images (logo.png, CFMWebBackground2.jpg, etc.) are now in the website repository directory for production deployment.
+
+### Favicon
+All pages include logo.png as the favicon via `<link rel="icon" type="image/png" href="logo.png">` in the <head> section.
+
+### GiveButter Integration
+- Script loaded in donate.html <head> section
+- Widget ID: gRx8Dj
+- Account ID: 7VH4ao0zgm6LIz2i
+- Widget displays as `<givebutter-widget id="gRx8Dj"></givebutter-widget>`
 
 ### Future Considerations
 - Images for stewards (currently marked as "image tbd")
 - Detailed content for First Day of Making page
-- Donation information and payment integration
 - Calendar system for events
-- Potentially move assets to web-accessible location for production
+- Additional donation information or messaging
 
 ## Design Philosophy
 - Clean, simple, cohesive design
