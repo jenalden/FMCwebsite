@@ -40,7 +40,7 @@ This is the website for the Church of the First Mark, a church centered around h
    - Background: about.jpg
    - Contains key links:
      - Link to First Day of Making page
-     - Link to Discord server (https://discord.gg/zc5eH9c8)
+     - Link to Discord server (https://discord.gg/zc5eH9c8) - opens in new tab
      - Link to Events page
      - Link to Donate page
 
