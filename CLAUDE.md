@@ -18,9 +18,11 @@ This is the website for the Church of the First Mark, a church centered around h
 - **Font**: Lindum (Regular) - `C:\Users\jenal\Google Drive\Church of the First Mark\Logos and Collateral\Lindum Font\Lindum-Regular.ttf`
 - **Logo**: logo.png (favicon) - `C:\Users\jenal\Google Drive\Church of the First Mark\Logos and Collateral\logo.png`
 - **Background Images**:
-  - home.jpg (homepage background) - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\images\Background\Home.jpg`
-  - about.jpg (about page background) - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\images\Background\About.jpg`
-  - toolbackground.png, tools-pattern.svg (other pages)
+  - home.jpg (homepage) - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\images\Background\Home.jpg`
+  - about.jpg (about page) - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\images\Background\About.jpg`
+  - events.jpg (events page) - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\images\Background\Events.jpg`
+  - donate.jpg (donate page) - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\images\Background\Donate.jpg`
+  - toolbackground.png, tools-pattern.svg (first-day-of-making page)
   - CFMWebBackground2.jpg, CFMWebBackground.jpg (previous backgrounds)
 - **Content**: About.md - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\About.md`
 
@@ -46,11 +48,14 @@ This is the website for the Church of the First Mark, a church centered around h
 
 3. **events.html** - Events/Calendar page
    - Simple page saying "Join us for our First Day of Making"
+   - Background: events.jpg
    - Links to First Day of Making page
 
 4. **donate.html** - Donations page
+   - Background: donate.jpg
    - GiveButter donation widget integrated (widget ID: gRx8Dj)
    - Script loaded from: https://widgets.givebutter.com/latest.umd.cjs?acct=7VH4ao0zgm6LIz2i&p=other
+   - Note to users that GiveButter tip is optional
 
 5. **first-day-of-making.html** - First Day of Making event page
    - NOT in main navigation (only linked from About and Events)
@@ -69,7 +74,7 @@ Note: First Day of Making page is intentionally NOT in the main menu.
 ## Design Specifications
 
 ### Colors
-- **Background**: home.jpg on homepage, about.jpg on about page, tool patterns on other pages
+- **Background**: Custom background images for each page (home.jpg, about.jpg, events.jpg, donate.jpg), tool patterns on first-day-of-making page
 - **Text**: Charcoal grey (#2a2a2a) - high contrast but not pure black
 - **Secondary text**: #4a4a4a
 - **Navigation bar**: Semi-transparent golden (#E3BC68 / rgba(227, 188, 104, 0.95)) - beige text (#f5f5dc)
