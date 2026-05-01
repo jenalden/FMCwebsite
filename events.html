@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events - Church of the First Mark</title>
     <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://widgets.givebutter.com/latest.umd.cjs?acct=7VH4ao0zgm6LIz2i&p=other"></script>
     <style>
         @font-face {
             font-family: 'Lindum';
@@ -30,7 +31,6 @@
         nav {
             background: rgba(227, 188, 104, 0.95);
             padding: 1rem;
-            position: sticky;
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -67,38 +67,56 @@
         }
 
         .container {
-            text-align: center;
-            padding: 4rem 2rem;
+            padding: 4rem 2rem 4rem 4rem;
             max-width: 1200px;
             margin: 0 auto;
             min-height: calc(100vh - 60px);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .content-box {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             padding: 3rem;
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-            max-width: 800px;
+            max-width: 720px;
+            width: 100%;
             text-align: left;
-            position: relative;
         }
 
         .content-box h2 {
             font-family: 'Lindum', serif;
             font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #3a3a3a;
+        }
+
+        .content-box h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
             margin-bottom: 1.5rem;
             color: #3a3a3a;
+            font-weight: 600;
+            line-height: 1.4;
         }
 
         .content-box p {
             font-size: 1.1rem;
             line-height: 1.8;
             margin-bottom: 1.2rem;
+            color: #4a4a4a;
+        }
+
+        .content-box ul {
+            margin: 0.5rem 0 1.2rem 1.8rem;
+        }
+
+        .content-box ul li {
+            font-size: 1.1rem;
+            line-height: 1.8;
             color: #4a4a4a;
         }
 
@@ -110,6 +128,16 @@
 
         .content-box a:hover {
             color: #2a2a2a;
+        }
+
+        .widget-wrapper {
+            margin: 1.5rem 0;
+        }
+
+        hr {
+            margin: 1.5rem 0;
+            border: none;
+            border-top: 1px solid #ccc;
         }
 
         @media (max-width: 768px) {
@@ -129,6 +157,7 @@
 
             .container {
                 padding: 2rem 1rem;
+                align-items: center;
             }
 
             .content-box {
@@ -139,7 +168,12 @@
                 font-size: 2rem;
             }
 
-            .content-box p {
+            .content-box h3 {
+                font-size: 1.15rem;
+            }
+
+            .content-box p,
+            .content-box ul li {
                 font-size: 1rem;
             }
         }
@@ -158,8 +192,38 @@
     <div class="container">
         <div class="content-box">
             <h2>Events</h2>
-            <p>Please join us for our <a href="event-4-26-2026.html">Next Event</a>!</p>
-            <p>April 26, 2026</p>
+            <h3>Church of the First Mark presents — a Day of Making at Lighthaven!</h3>
+
+            <p>On May 9th, we'll be hosting another Day of Making — this time in Berkeley at Lighthaven!</p>
+
+            <p>Come and spend the day making things in community at the best venue in town. Do you have a project you've been wanting to work on? Bring it!</p>
+
+            <p>Don't have a project yet? Don't worry, we will have so much for you to do!</p>
+
+            <p>We'll have stations set up for you to try</p>
+            <ul>
+                <li>drawing/painting</li>
+                <li>sewing</li>
+                <li>writer's circle</li>
+                <li>crocheting/knitting</li>
+                <li>leather working</li>
+                <li>bookbinding</li>
+                <li>jewelry making</li>
+                <li>musicians, bring your instruments and jam!</li>
+            </ul>
+            <p>at least — we'll let you know as we add more!</p>
+
+            <hr>
+
+            <p>Would you like to volunteer at the event? Please reach out to us at <a href="mailto:stewards@firstmarkchurch.org">stewards@firstmarkchurch.org</a>.</p>
+
+            <div class="widget-wrapper">
+                <givebutter-widget id="gmBwO3"></givebutter-widget>
+            </div>
+
+            <p>Lighthaven is generously giving us an incredible deal to use the space, but it isn't free. $20 covers the cost of the venue, and includes soft drinks and snacks. Additional donations to help cover the cost of materials are greatly appreciated. Kids 5 and under are free!</p>
+
+            <p>Already have your ticket? <a href="https://partiful.com/e/HyxLVI9H83kD04DXT3t6" target="_blank">RSVP to the partiful invitation</a>, and join the <a href="https://discord.gg/7V2ssnrvkc" target="_blank">discord server</a> to tell us what you'd like to make!</p>
         </div>
     </div>
 </body>
