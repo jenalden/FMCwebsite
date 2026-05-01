@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:givebutter.com)",
+      "WebSearch",
+      "WebFetch(domain:docs.givebutter.com)",
+      "WebFetch(domain:help.givebutter.com)"
+    ]
+  }
+}
