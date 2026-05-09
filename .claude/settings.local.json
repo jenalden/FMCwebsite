@@ -5,7 +5,8 @@
       "WebSearch",
       "WebFetch(domain:docs.givebutter.com)",
       "WebFetch(domain:help.givebutter.com)",
-      "WebFetch(domain:www.firstmarkchurch.org)"
+      "WebFetch(domain:www.firstmarkchurch.org)",
+      "Bash(python3 -)"
     ]
   }
 }
