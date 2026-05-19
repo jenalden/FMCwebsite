@@ -15,7 +15,6 @@
     <meta name="twitter:description" content="Calendar of Events">
     <meta name="twitter:image" content="https://www.firstmarkchurch.org/og-events.png">
     <link rel="icon" type="image/png" href="logo.png">
-    <script src="https://widgets.givebutter.com/latest.umd.cjs?acct=7VH4ao0zgm6LIz2i&p=other"></script>
     <style>
         @font-face {
             font-family: 'Lindum';
@@ -165,11 +164,6 @@
             border-top: 1px solid #ccc;
         }
 
-        .loading {
-            color: #8a8a8a;
-            font-style: italic;
-        }
-
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
@@ -221,73 +215,48 @@
 
     <div class="container">
         <div class="content-box">
-            <div id="doc-content"><p class="loading">Loading events...</p></div>
-            <div id="widget-section" style="display:none">
-                <hr>
-                <div class="widget-wrapper">
-                    <givebutter-widget id="gmBwO3"></givebutter-widget>
-                </div>
+            <h3>Join us for our next event:</h3>
+            <h2>A Day of Making at Lighthaven!</h2>
+
+            <p>On May 9th, we'll be hosting another Day of Making - this time in Berkeley at Lighthaven!</p>
+
+            <p>Come and spend the day making things in community at the best venue in town.</p>
+
+            <p>Here's our current schedule of mini-workshops for the day:</p>
+            <div class="schedule">
+                <span class="time">2:00 pm</span>   <span>Doors open</span>
+                <span class="time">3:00 pm</span>   <span>Live model figure drawing</span>
+                <span class="time">3:00 pm</span>   <span>Learn to crochet</span>
+                <span class="time">3:30 pm</span>   <span>Introduction to bookbinding</span>
+                <span class="time">4:00 pm</span>   <span>Gathering</span>
+                <span class="time">4:30 pm</span>   <span>Writer's circle</span>
+                <span class="time">4:30 pm</span>   <span>Musician jam</span>
+                <span class="time">5:00 pm</span>   <span>Introduction to leather working</span>
+                <span class="time">6:00 pm</span>   <span>Writer's critique circle</span>
+                <span class="time">8:00 pm</span>   <span>Musician jam (encore!)</span>
             </div>
+
+            <p>Do you have a project you've been wanting to work on? Bring it!</p>
+
+            <p>Don't have a project yet? Don't worry, we will have so much for you to do. We'll have stations set up all day for you to try all kinds of making:</p>
+            <ul>
+                <li>drawing/painting</li>
+                <li>sewing/mending</li>
+                <li>writers' corner</li>
+                <li>crocheting/knitting</li>
+                <li>leather working</li>
+                <li>embroidery</li>
+                <li>bookbinding</li>
+                <li>jewelry making</li>
+                <li>flower dying</li>
+                <li>musicians, bring your instruments and jam!</li>
+            </ul>
+            <p>at least — we'll let you know as we add more!</p>
+
+            <hr>
+
+            <p>Would you like to volunteer at the event? Please reach out to us at <a href="mailto:stewards@firstmarkchurch.org">stewards@firstmarkchurch.org</a>.</p>
         </div>
     </div>
-
-    <script>
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwMKBGv-d3bEnDNMk5s0T_CCAiQKfTFeLxnlRC4s6X21O0s65-FRwUm6LaUNE9Gaz_/exec';
-
-        function esc(s) {
-            return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        }
-
-        function parseElements(elements) {
-            let html = '';
-            let inList = false;
-
-            for (const el of elements) {
-                if (el.type === 'paragraph') {
-                    if (inList) { html += '</ul>'; inList = false; }
-                    const text = esc(el.text);
-                    if (!text.trim()) continue;
-                    if (el.level === 'h1') html += `<h2>${text}</h2>`;
-                    else if (el.level === 'h2') html += `<h3>${text}</h3>`;
-                    else html += `<p>${text}</p>`;
-                } else if (el.type === 'listItem') {
-                    if (!inList) { html += '<ul>'; inList = true; }
-                    html += `<li>${esc(el.text)}</li>`;
-                } else if (el.type === 'table') {
-                    if (inList) { html += '</ul>'; inList = false; }
-                    const cols = el.rows[0]?.length || 0;
-                    if (cols === 2) {
-                        html += '<div class="schedule">';
-                        for (const row of el.rows) {
-                            html += `<span class="time">${esc(row[0])}</span><span>${esc(row[1])}</span>`;
-                        }
-                        html += '</div>';
-                    }
-                }
-            }
-
-            if (inList) html += '</ul>';
-            return html;
-        }
-
-        async function loadEvents() {
-            const box = document.getElementById('doc-content');
-            try {
-                const res = await fetch(SCRIPT_URL);
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                const data = await res.json();
-                const html = parseElements(data.elements || []);
-                if (html) {
-                    box.innerHTML = html;
-                } else {
-                    box.innerHTML = '<p>Events coming soon — check back soon!</p>';
-                }
-            } catch (e) {
-                box.innerHTML = `<p class="loading">Error: ${e.message}</p>`;
-            }
-        }
-
-        loadEvents();
-    </script>
 </body>
 </html>
