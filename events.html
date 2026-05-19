@@ -232,69 +232,34 @@
     </div>
 
     <script>
-        const DOC_ID = '1glwUUaRLmmIHiHQnKqmFOqTwtcYygtXX7khHvW0fH7Q';
-        const API_KEY = 'AIzaSyCEsnmn3OqybGefnKQZRnzmWlUJpR-7hUg';
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwMKBGv-d3bEnDNMk5s0T_CCAiQKfTFeLxnlRC4s6X21O0s65-FRwUm6LaUNE9Gaz_/exec';
 
         function esc(s) {
             return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         }
 
-        function renderRuns(elements) {
-            return (elements || []).map(e => {
-                if (!e.textRun) return '';
-                let t = esc(e.textRun.content || '').replace(/\n$/, '');
-                const ts = e.textRun.textStyle || {};
-                if (ts.link?.url) t = `<a href="${ts.link.url.replace(/"/g, '&quot;')}" target="_blank">${t}</a>`;
-                if (ts.bold) t = `<strong>${t}</strong>`;
-                if (ts.italic) t = `<em>${t}</em>`;
-                return t;
-            }).join('');
-        }
-
-        function cellText(cell) {
-            return (cell.content || []).map(ce => {
-                if (!ce.paragraph) return '';
-                return renderRuns(ce.paragraph.elements).replace(/\n$/, '');
-            }).join('');
-        }
-
-        function parseDoc(doc) {
-            const items = doc.body?.content || [];
+        function parseElements(elements) {
             let html = '';
             let inList = false;
 
-            for (const el of items) {
-                if (el.paragraph) {
-                    const para = el.paragraph;
-                    const style = para.paragraphStyle?.namedStyleType || 'NORMAL_TEXT';
-                    const isBullet = !!para.bullet;
-                    const text = renderRuns(para.elements);
-                    const plain = text.replace(/<[^>]*>/g, '').trim();
-
-                    if (isBullet) {
-                        if (!inList) { html += '<ul>'; inList = true; }
-                        html += `<li>${text}</li>`;
-                    } else {
-                        if (inList) { html += '</ul>'; inList = false; }
-                        if (!plain) continue;
-                        if (style === 'HEADING_1') html += `<h2>${text}</h2>`;
-                        else if (style === 'HEADING_2') html += `<h3>${text}</h3>`;
-                        else html += `<p>${text}</p>`;
-                    }
-
-                } else if (el.table) {
+            for (const el of elements) {
+                if (el.type === 'paragraph') {
                     if (inList) { html += '</ul>'; inList = false; }
-                    const rows = el.table.tableRows || [];
-                    const cols = rows[0]?.tableCells?.length || 0;
+                    const text = esc(el.text);
+                    if (!text.trim()) continue;
+                    if (el.level === 'h1') html += `<h2>${text}</h2>`;
+                    else if (el.level === 'h2') html += `<h3>${text}</h3>`;
+                    else html += `<p>${text}</p>`;
+                } else if (el.type === 'listItem') {
+                    if (!inList) { html += '<ul>'; inList = true; }
+                    html += `<li>${esc(el.text)}</li>`;
+                } else if (el.type === 'table') {
+                    if (inList) { html += '</ul>'; inList = false; }
+                    const cols = el.rows[0]?.length || 0;
                     if (cols === 2) {
                         html += '<div class="schedule">';
-                        for (const row of rows) {
-                            (row.tableCells || []).forEach((cell, i) => {
-                                const t = cellText(cell);
-                                html += i === 0
-                                    ? `<span class="time">${t}</span>`
-                                    : `<span>${t}</span>`;
-                            });
+                        for (const row of el.rows) {
+                            html += `<span class="time">${esc(row[0])}</span><span>${esc(row[1])}</span>`;
                         }
                         html += '</div>';
                     }
@@ -308,12 +273,10 @@
         async function loadEvents() {
             const box = document.getElementById('doc-content');
             try {
-                const res = await fetch(
-                    `https://docs.googleapis.com/v1/documents/${DOC_ID}?key=${API_KEY}`
-                );
-                if (!res.ok) throw new Error(`HTTP ${res.status}: ${await res.text()}`);
-                const doc = await res.json();
-                const html = parseDoc(doc);
+                const res = await fetch(SCRIPT_URL);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                const html = parseElements(data.elements || []);
                 if (html) {
                     box.innerHTML = html;
                     document.getElementById('widget-section').style.display = 'block';
