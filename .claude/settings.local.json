@@ -6,7 +6,17 @@
       "WebFetch(domain:docs.givebutter.com)",
       "WebFetch(domain:help.givebutter.com)",
       "WebFetch(domain:www.firstmarkchurch.org)",
-      "Bash(python3 -)"
+      "Bash(python3 -)",
+      "PowerShell(Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 20 Name, Id, @{N='RAM_MB';E={[math]::Round\\($_.WorkingSet64/1MB,1\\)}}, @{N='CPU_s';E={[math]::Round\\($_.CPU,1\\)}} | Format-Table -AutoSize)",
+      "PowerShell(Get-CimInstance Win32_OperatingSystem | Select-Object @{N='TotalRAM_GB';E={[math]::Round\\($_.TotalVisibleMemorySize/1MB,1\\)}}, @{N='FreeRAM_GB';E={[math]::Round\\($_.FreePhysicalMemory/1MB,1\\)}}, @{N='UsedRAM_GB';E={[math]::Round\\(\\($_.TotalVisibleMemorySize-$_.FreePhysicalMemory\\)/1MB,1\\)}})",
+      "PowerShell(Get-CimInstance Win32_OperatingSystem | Select-Object @{N='TotalRAM_GB';E={[math]::Round\\($_.TotalVisibleMemorySize/1MB,1\\)}}, @{N='FreeRAM_GB';E={[math]::Round\\($_.FreePhysicalMemory/1MB,1\\)}})",
+      "PowerShell(Get-CimInstance Win32_Processor | Select-Object Name, NumberOfCores, NumberOfLogicalProcessors, @{N='Load_%';E={$_.LoadPercentage}})",
+      "PowerShell(Get-CimInstance Win32_VideoController | Select-Object Name, AdapterRAM, @{N='RAM_GB';E={[math]::Round\\($_.AdapterRAM/1GB,1\\)}}, DriverVersion, Status | Format-List)",
+      "PowerShell(Get-CimInstance Win32_VideoController)",
+      "PowerShell(Get-CimInstance Win32_ComputerSystem)",
+      "PowerShell(Get-CimInstance Win32_BIOS)",
+      "PowerShell(\\(Get-CimInstance Win32_ComputerSystem\\).Manufacturer; \\(Get-CimInstance Win32_ComputerSystem\\).Model)",
+      "PowerShell(\\(Get-CimInstance Win32_ComputerSystem\\).TotalPhysicalMemory / 1GB)"
     ]
   }
 }
