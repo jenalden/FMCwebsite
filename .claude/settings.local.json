@@ -16,7 +16,8 @@
       "PowerShell(Get-CimInstance Win32_ComputerSystem)",
       "PowerShell(Get-CimInstance Win32_BIOS)",
       "PowerShell(\\(Get-CimInstance Win32_ComputerSystem\\).Manufacturer; \\(Get-CimInstance Win32_ComputerSystem\\).Model)",
-      "PowerShell(\\(Get-CimInstance Win32_ComputerSystem\\).TotalPhysicalMemory / 1GB)"
+      "PowerShell(\\(Get-CimInstance Win32_ComputerSystem\\).TotalPhysicalMemory / 1GB)",
+      "WebFetch(domain:docs.googleapis.com)"
     ]
   }
 }

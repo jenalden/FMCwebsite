@@ -311,7 +311,7 @@
                 const res = await fetch(
                     `https://docs.googleapis.com/v1/documents/${DOC_ID}?key=${API_KEY}`
                 );
-                if (!res.ok) throw new Error(res.status);
+                if (!res.ok) throw new Error(`HTTP ${res.status}: ${await res.text()}`);
                 const doc = await res.json();
                 const html = parseDoc(doc);
                 if (html) {
@@ -321,7 +321,7 @@
                     box.innerHTML = '<p>Events coming soon — check back soon!</p>';
                 }
             } catch (e) {
-                box.innerHTML = '<p>Events coming soon — check back soon!</p>';
+                box.innerHTML = `<p class="loading">Error: ${e.message}</p>`;
             }
         }
 
