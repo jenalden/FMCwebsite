@@ -23,7 +23,7 @@ This is the website for the Church of the First Mark, a church centered around h
   - events.jpg (events page) - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\images\Background\Events.jpg`
   - donate.jpg (donate page) - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\images\Background\Donate.jpg`
   - toolbackground.png, tools-pattern.svg (first-day-of-making page)
-  - CFMWebBackground2.jpg, CFMWebBackground.jpg (previous backgrounds)
+  - Retired backgrounds (CFMwebBackground.jpg, CFMwebBackground2.jpg) are not in this repo. They live in Google Drive at `Church of the First Mark/Website/images/`
 - **Content**: About.md - `C:\Users\jenal\Google Drive\Church of the First Mark\Website\About.md`
 
 ## Site Structure
@@ -122,7 +122,7 @@ Note: First Day of Making page is intentionally NOT in the main menu.
 Lindum-Regular.ttf is loaded locally in the website directory via @font-face. Font file copied from Google Drive.
 
 ### Images
-All images (logo.png, CFMWebBackground2.jpg, etc.) are now in the website repository directory for production deployment.
+All images used by the site (logo.png, home.jpg, about.jpg, events.jpg, donate.jpg, etc.) are in the website repository directory for production deployment.
 
 ### Favicon
 All pages include logo.png as the favicon via `<link rel="icon" type="image/png" href="logo.png">` in the <head> section.
